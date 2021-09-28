@@ -9,6 +9,7 @@ export { default as AutoRenewIcon } from "./Icons/AutoRenew";
 export { default as BinanceIcon } from "./Icons/Binance";
 export { default as BlockIcon } from "./Icons/Block";
 export { default as BunnyPlaceholderIcon } from "./Icons/BunnyPlaceholder";
+export { default as BellIcon } from "./Icons/Bell";
 export { default as CardViewIcon } from "./Icons/CardView";
 export { default as CalculateIcon } from "./Icons/Calculate";
 export { default as CheckmarkIcon } from "./Icons/Checkmark";
