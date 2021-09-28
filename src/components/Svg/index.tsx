@@ -43,6 +43,7 @@ export { default as ProgressBunny } from "./Icons/ProgressBunny";
 export { default as WaitIcon } from "./Icons/Wait";
 export { default as Won } from "./Icons/Won";
 export { default as Ticket } from "./Icons/Ticket";
+export { default as ThreeDotsIcon } from "./Icons/ThreeDots";
 export { default as TicketRound } from "./Icons/TicketRound";
 export { default as TimerIcon } from "./Icons/Timer";
 export { default as SearchIcon } from "./Icons/Search";
