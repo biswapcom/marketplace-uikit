@@ -5,7 +5,7 @@ import { ToggleTheme } from "../components/Toggle/types";
 import { TooltipTheme } from "../components/Tooltip/types";
 import { ModalTheme } from "../widgets/Modal/types";
 import { Colors, Breakpoints, MediaQueries, Spacing, Shadows, Radii, ZIndices } from "./types";
-export interface PancakeTheme {
+export interface BiswapTheme {
     siteWidth: number;
     isDark: boolean;
     alert: AlertTheme;
