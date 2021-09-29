@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { LayoutProps, SpaceProps } from "styled-system";
 
 export const scales = {
+  XL: 'xl',
   MD: "md",
   SM: "sm",
   XS: "xs",
@@ -10,6 +11,7 @@ export const scales = {
 
 export const variants = {
   PRIMARY: "primary",
+  TRANSPARENT: "transparent",
   SECONDARY: "secondary",
   TERTIARY: "tertiary",
   TEXT: "text",

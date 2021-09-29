@@ -53,8 +53,28 @@ export const Default: React.FC = () => {
         </Button>
       </Box>
       <Box>
-        <Button className="hover-disabled" mr="8px">
-          test
+        <Button m="8px" variant="transparent">
+          Transparent
+        </Button>
+        <Button variant="transparent" disabled scale='md'>
+          Transparent
+        </Button>
+        <Button variant="transparent" disabled scale='xl'>
+          Transparent
+        </Button>
+        <Button variant="transparent"  scale='xl'>
+          Transparent
+        </Button>
+        <Button variant="transparent" disabled>
+          Transpa
+        </Button>
+      </Box>
+      <Box>
+        <Button variant="transparent" disabled scale='xl'>
+          Transparent
+        </Button>
+        <Button variant="transparent"  scale='xl'>
+          Trans
         </Button>
       </Box>
     </>

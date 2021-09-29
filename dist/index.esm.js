@@ -141,12 +141,14 @@ var getExternalLinkProps = function () { return ({
 }); };
 
 var scales$5 = {
+    XL: 'xl',
     MD: "md",
     SM: "sm",
     XS: "xs",
 };
 var variants$3 = {
     PRIMARY: "primary",
+    TRANSPARENT: "transparent",
     SECONDARY: "secondary",
     TERTIARY: "tertiary",
     TEXT: "text",
@@ -158,6 +160,11 @@ var variants$3 = {
 
 var _a$4, _b$1;
 var scaleVariants$1 = (_a$4 = {},
+    _a$4[scales$5.XL] = {
+        height: "48px",
+        fontSize: "24px",
+        padding: "0 12px",
+    },
     _a$4[scales$5.MD] = {
         height: "48px",
         padding: "0 24px",
@@ -184,6 +191,13 @@ var styleVariants$2 = (_b$1 = {},
         borderColor: "primary",
         boxShadow: "none",
         color: "primary",
+        ":disabled": {
+            backgroundColor: "transparent",
+        },
+    },
+    _b$1[variants$3.TRANSPARENT] = {
+        backgroundColor: "transparent",
+        color: "background",
         ":disabled": {
             backgroundColor: "transparent",
         },
@@ -962,7 +976,7 @@ var templateObject_1$E, templateObject_2$i;
 
 var getBackgroundColor = function (_a) {
     var theme = _a.theme, variant = _a.variant;
-    return theme.colors[variant === variants$3.SUBTLE ? "tertiary" : "card"];
+    return variant === variants$3.TRANSPARENT ? 'transparent' : theme.colors[variant === variants$3.SUBTLE ? "tertiary" : "card"];
 };
 var StyledButtonMenu = styled.div(templateObject_1$D || (templateObject_1$D = __makeTemplateObject(["\n  background-color: ", ";\n  border-radius: 8px;\n  display: ", ";\n\n  & > button,\n  & > a {\n    ", "\n  }\n  & > button + button,\n  & > a + a {\n    margin-left: 2px; // To avoid focus shadow overlap\n  }\n"], ["\n  background-color: ", ";\n  border-radius: 8px;\n  display: ", ";\n\n  & > button,\n  & > a {\n    ", "\n  }\n  & > button + button,\n  & > a + a {\n    margin-left: 2px; // To avoid focus shadow overlap\n  }\n"])), getBackgroundColor, function (_a) {
     var autoWidth = _a.autoWidth;
@@ -992,7 +1006,7 @@ var InactiveButton = styled(Button)(templateObject_1$C || (templateObject_1$C = 
 var ButtonMenuItem = function (_a) {
     var _b = _a.isActive, isActive = _b === void 0 ? false : _b, _c = _a.variant, variant = _c === void 0 ? variants$3.PRIMARY : _c, as = _a.as, props = __rest(_a, ["isActive", "variant", "as"]);
     if (!isActive) {
-        return (React.createElement(InactiveButton, __assign({ forwardedAs: as, variant: "tertiary", color: variant === variants$3.PRIMARY ? "text" : "primary" }, props)));
+        return (React.createElement(InactiveButton, __assign({ forwardedAs: as, variant: "tertiary", color: variant === variants$3.PRIMARY ? "text" : variant === variants$3.TRANSPARENT ? "backgroundDisabled" : "primary" }, props)));
     }
     return React.createElement(Button, __assign({ as: as, variant: variant }, props));
 };
