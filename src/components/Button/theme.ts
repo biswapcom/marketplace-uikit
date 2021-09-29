@@ -1,6 +1,11 @@
 import { scales, variants } from "./types";
 
 export const scaleVariants = {
+  [scales.XL]: {
+    height: "48px",
+    fontSize: "24px",
+    padding: "0 12px",
+  },
   [scales.MD]: {
     height: "48px",
     padding: "0 24px",
@@ -28,6 +33,13 @@ export const styleVariants = {
     borderColor: "primary",
     boxShadow: "none",
     color: "primary",
+    ":disabled": {
+      backgroundColor: "transparent",
+    },
+  },
+  [variants.TRANSPARENT]: {
+    backgroundColor: "transparent",
+    color: "background",
     ":disabled": {
       backgroundColor: "transparent",
     },

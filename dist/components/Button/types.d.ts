@@ -2,12 +2,14 @@ import { ComponentProps, ElementType, ReactElement, ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { LayoutProps, SpaceProps } from "styled-system";
 export declare const scales: {
+    readonly XL: "xl";
     readonly MD: "md";
     readonly SM: "sm";
     readonly XS: "xs";
 };
 export declare const variants: {
     readonly PRIMARY: "primary";
+    readonly TRANSPARENT: "transparent";
     readonly SECONDARY: "secondary";
     readonly TERTIARY: "tertiary";
     readonly TEXT: "text";

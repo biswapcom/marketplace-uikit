@@ -1,4 +1,9 @@
 export declare const scaleVariants: {
+    xl: {
+        height: string;
+        fontSize: string;
+        padding: string;
+    };
     md: {
         height: string;
         padding: string;
@@ -24,6 +29,13 @@ export declare const styleVariants: {
         border: string;
         borderColor: string;
         boxShadow: string;
+        color: string;
+        ":disabled": {
+            backgroundColor: string;
+        };
+    };
+    transparent: {
+        backgroundColor: string;
         color: string;
         ":disabled": {
             backgroundColor: string;
