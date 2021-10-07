@@ -70,5 +70,7 @@ export {default as HourglassIcon} from './Icons/Hourglass'
 export {default as GasIcon} from './Icons/Gas'
 export {default as TradeIcon} from './Icons/Trade'
 export {default as StarIcon} from './Icons/Star'
+export {default as CheckedIcon} from './Icons/Checked'
+export {default as LightningIcon} from './Icons/Lightning'
 export { default as Svg } from "./Svg";
 export type { SvgProps } from "./types";
