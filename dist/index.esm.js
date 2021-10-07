@@ -156,6 +156,7 @@ var variants$3 = {
     SUBTLE: "subtle",
     SUCCESS: "success",
     DARK: "dark",
+    PRIMARY_DARK: 'primaryDark'
 };
 
 var _a$4, _b$1;
@@ -227,6 +228,11 @@ var styleVariants$2 = (_b$1 = {},
     _b$1[variants$3.DARK] = {
         backgroundColor: "dark",
         color: "text",
+        boxShadow: "none",
+    },
+    _b$1[variants$3.PRIMARY_DARK] = {
+        backgroundColor: "inputSecondary",
+        color: "contrast",
         boxShadow: "none",
     },
     _b$1);

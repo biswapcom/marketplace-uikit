@@ -71,4 +71,9 @@ export const styleVariants = {
     color: "text",
     boxShadow: "none",
   },
+  [variants.PRIMARY_DARK]: {
+    backgroundColor: "inputSecondary",
+    color: "contrast",
+    boxShadow: "none",
+  },
 };
