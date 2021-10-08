@@ -72,5 +72,6 @@ export { default as TradeIcon } from './Icons/Trade';
 export { default as StarIcon } from './Icons/Star';
 export { default as CheckedIcon } from './Icons/Checked';
 export { default as LightningIcon } from './Icons/Lightning';
+export { default as HammerIcon } from './Icons/Hammer';
 export { default as Svg } from "./Svg";
 export type { SvgProps } from "./types";
