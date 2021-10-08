@@ -7,13 +7,6 @@ import isTouchDevice from "../../util/isTouchDevice";
 import { StyledTooltip, Arrow } from "./StyledTooltip";
 import { TooltipOptions, TooltipRefs } from "./types";
 
-const invertTheme = (currentTheme: DefaultTheme) => {
-  if (currentTheme.isDark) {
-    return light;
-  }
-  return dark;
-};
-
 const portalRoot = document.getElementById("portal-root");
 
 const useTooltip = (content: React.ReactNode, options: TooltipOptions): TooltipRefs => {
@@ -185,7 +178,7 @@ const useTooltip = (content: React.ReactNode, options: TooltipOptions): TooltipR
 
   const tooltip = (
     <StyledTooltip ref={setTooltipElement} style={styles.popper} {...attributes.popper}>
-      <ThemeProvider theme={invertTheme}>{content}</ThemeProvider>
+      <ThemeProvider theme={dark}>{content}</ThemeProvider>
       <Arrow ref={setArrowElement} style={styles.arrow} />
     </StyledTooltip>
   );

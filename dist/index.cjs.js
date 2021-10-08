@@ -2629,12 +2629,6 @@ var StyledTooltip = styled__default["default"].div(templateObject_2$8 || (templa
 }, Arrow, Arrow, Arrow, Arrow);
 var templateObject_1$c, templateObject_2$8;
 
-var invertTheme = function (currentTheme) {
-    if (currentTheme.isDark) {
-        return lightTheme;
-    }
-    return darkTheme;
-};
 var portalRoot = document.getElementById("portal-root");
 var useTooltip = function (content, options) {
     var _a = options.placement, placement = _a === void 0 ? "auto" : _a, _b = options.trigger, trigger = _b === void 0 ? "hover" : _b, _c = options.arrowPadding, arrowPadding = _c === void 0 ? 16 : _c, _d = options.tooltipPadding, tooltipPadding = _d === void 0 ? { left: 16, right: 16 } : _d, _e = options.tooltipOffset, tooltipOffset = _e === void 0 ? [0, 10] : _e;
@@ -2776,7 +2770,7 @@ var useTooltip = function (content, options) {
         ],
     }), styles = _k.styles, attributes = _k.attributes;
     var tooltip = (React__default["default"].createElement(StyledTooltip, __assign({ ref: setTooltipElement, style: styles.popper }, attributes.popper),
-        React__default["default"].createElement(styled.ThemeProvider, { theme: invertTheme }, content),
+        React__default["default"].createElement(styled.ThemeProvider, { theme: darkTheme }, content),
         React__default["default"].createElement(Arrow, { ref: setArrowElement, style: styles.arrow })));
     var tooltipInPortal = portalRoot ? reactDom.createPortal(tooltip, portalRoot) : null;
     return {
