@@ -77,7 +77,6 @@ const ResetCSS = createGlobalStyle`
     border-radius: 8px;
   }
   ::-webkit-scrollbar-track {
-    // box-shadow: inset 0 0 5px ${({ theme }) => theme.colors.tertiary}; 
     border-radius: 10px;
     background: ${({ theme }) => theme.colors.tertiary};
   }

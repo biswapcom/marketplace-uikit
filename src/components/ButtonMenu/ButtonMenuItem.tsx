@@ -6,7 +6,7 @@ import { ButtonMenuItemProps } from "./types";
 
 interface InactiveButtonProps extends BaseButtonProps {
   forwardedAs: BaseButtonProps["as"];
-  color: "primary" | "text" | "backgroundDisabled";
+  color: "primary" | "text" | "backgroundDisabled" | 'tertiary';
 }
 
 const InactiveButton: PolymorphicComponent<InactiveButtonProps, "button"> = styled(Button)<InactiveButtonProps>`
@@ -28,13 +28,13 @@ const ButtonMenuItem: PolymorphicComponent<ButtonMenuItemProps, "button"> = ({
       <InactiveButton
         forwardedAs={as}
         variant="tertiary"
-        color={variant === variants.PRIMARY ? "text" : variant === variants.TRANSPARENT ? "backgroundDisabled" : "primary"}
+        color={variant === variants.PRIMARY ? "text" : variant === variants.TRANSPARENT ? "backgroundDisabled" : variant === variants.TERTIARY ? 'primary' : "primary"}
         {...props}
       />
     );
   }
 
-  return <Button as={as} variant={variant} {...props} />;
+  return <Button as={as} variant={variant === variants.TERTIARY ? 'primary' : variant} {...props} />;
 };
 
 export default ButtonMenuItem;
