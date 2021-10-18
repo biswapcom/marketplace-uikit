@@ -29,6 +29,15 @@ export const Default: React.FC = () => {
   return (
     <>
       <Row>
+        <ButtonMenu activeIndex={index} onItemClick={handleClick} variant="tertiary" scale="xl">
+          <ButtonMenuItem>Transparent 1</ButtonMenuItem>
+          <ButtonMenuItem>Transparent 2</ButtonMenuItem>
+          <ButtonMenuItem>Transparent 3</ButtonMenuItem>
+          <ButtonMenuItem>Transparent 4</ButtonMenuItem>
+          <ButtonMenuItem>Transparent 5</ButtonMenuItem>
+        </ButtonMenu>
+      </Row>
+      <Row>
         <ButtonMenu activeIndex={index} onItemClick={handleClick} variant="transparent" scale="xl">
           <ButtonMenuItem>Transparent 1</ButtonMenuItem>
           <ButtonMenuItem>Transparent 2</ButtonMenuItem>
