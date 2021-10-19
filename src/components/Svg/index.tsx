@@ -75,5 +75,6 @@ export {default as LightningIcon} from './Icons/Lightning'
 export {default as HammerIcon} from './Icons/Hammer'
 export {default as FavoriteFullIcon} from './Icons/FavoriteFull'
 export {default as FavoriteEmptyIcon} from './Icons/FavoriteEmpty'
+export {default as ShareIcon} from './Icons/Share'
 export { default as Svg } from "./Svg";
 export type { SvgProps } from "./types";
