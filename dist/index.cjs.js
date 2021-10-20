@@ -884,19 +884,19 @@ var Icon$c = function (props) {
 };
 
 var Icon$b = function (props) {
-    return (React__default["default"].createElement(Svg, __assign({ viewBox: "0 0 24 24" }, props),
-        React__default["default"].createElement("circle", { cx: "5.13371", cy: "10.4316", r: "2.00871", stroke: "#749BD8", "stroke-width": "1.25" }),
-        React__default["default"].createElement("circle", { cx: "14.3686", cy: "5.13371", r: "2.00871", stroke: "#749BD8", "stroke-width": "1.25" }),
-        React__default["default"].createElement("circle", { cx: "14.3686", cy: "15.7001", r: "2.00871", stroke: "#749BD8", "stroke-width": "1.25" }),
-        React__default["default"].createElement("line", { x1: "6.87842", y1: "8.9519", x2: "12.2137", y2: "5.87156", stroke: "#749BD8", "stroke-width": "1.25" }),
-        React__default["default"].createElement("line", { y1: "-0.625", x2: "6.16068", y2: "-0.625", transform: "matrix(0.866025 0.5 0.5 -0.866025 7.19092 11.3623)", stroke: "#749BD8", "stroke-width": "1.25" })));
+    return (React__default["default"].createElement(Svg, __assign({ viewBox: "0 0 24 24", stroke: 'currentColor', fill: 'none' }, props),
+        React__default["default"].createElement("path", { d: "M8.6959 12.5179C8.6959 13.9182 7.56074 15.0533 6.16045 15.0533C4.76016 15.0533 3.625 13.9182 3.625 12.5179C3.625 11.1176 4.76016 9.98242 6.16045 9.98242C7.56074 9.98242 8.6959 11.1176 8.6959 12.5179Z", fill: 'none', strokeWidth: "1.25" }),
+        React__default["default"].createElement("path", { d: "M19.7779 6.16045C19.7779 7.56074 18.6428 8.6959 17.2425 8.6959C15.8422 8.6959 14.707 7.56074 14.707 6.16045C14.707 4.76016 15.8422 3.625 17.2425 3.625C18.6428 3.625 19.7779 4.76016 19.7779 6.16045Z", fill: 'none', strokeWidth: "1.25" }),
+        React__default["default"].createElement("path", { d: "M19.7779 18.8401C19.7779 20.2404 18.6428 21.3756 17.2425 21.3756C15.8422 21.3756 14.707 20.2404 14.707 18.8401C14.707 17.4398 15.8422 16.3047 17.2425 16.3047C18.6428 16.3047 19.7779 17.4398 19.7779 18.8401Z", fill: 'none', strokeWidth: "1.25" }),
+        React__default["default"].createElement("line", { x1: "8.31641", y1: "10.8513", x2: "14.7188", y2: "7.15491", strokeWidth: "1.25" }),
+        React__default["default"].createElement("line", { y1: "-0.625", x2: "7.39281", y2: "-0.625", transform: "matrix(0.866025 0.5 0.5 -0.866025 8.62891 13.6348)", strokeWidth: "1.25" })));
 };
 
 var Icon$a = function (props) {
-    return (React__default["default"].createElement(Svg, __assign({ viewBox: "0 0 24 24" }, props),
-        React__default["default"].createElement("path", { d: "M11 4.16653C6.7027 4.22058 2.48649 8.3788 1 10.0342C2.50901 11.7459 6.75676 15.8601 11 15.8331C15.2432 15.8061 19.3784 11.7234 21 10.0342C19.4009 8.33375 15.2973 4.11248 11 4.16653Z", stroke: "#749BD8", "stroke-width": "1.25" }),
-        React__default["default"].createElement("circle", { cx: "10.9314", cy: "10.0676", r: "4.27365", stroke: "#749BD8", "stroke-width": "1.25" }),
-        React__default["default"].createElement("path", { "fill-rule": "evenodd", "clip-rule": "evenodd", d: "M9.78365 9.8992C10.3994 9.8992 10.8985 9.40006 10.8985 8.78434C10.8985 8.40683 10.7109 8.07315 10.4238 7.87146C10.5978 7.82784 10.78 7.80469 10.9675 7.80469C12.199 7.80469 13.1973 8.80297 13.1973 10.0344C13.1973 11.2659 12.199 12.2641 10.9675 12.2641C9.73608 12.2641 8.73779 11.2659 8.73779 10.0344C8.73779 9.80445 8.77261 9.58262 8.83725 9.3739C9.03417 9.68934 9.3844 9.8992 9.78365 9.8992Z", fill: "#749BD8" })));
+    return (React__default["default"].createElement(Svg, __assign({ viewBox: "0 0 24 24", stroke: 'currentColor', fill: 'currentColor' }, props),
+        React__default["default"].createElement("path", { d: "M12 5.70173C7.35887 5.76011 2.80536 10.251 1.19995 12.0388C2.82968 13.8875 7.41725 18.3308 12 18.3016C16.5827 18.2724 21.0486 13.8631 22.8 12.0388C21.0729 10.2023 16.641 5.64335 12 5.70173Z", fill: 'none', strokeWidth: "1.25" }),
+        React__default["default"].createElement("path", { d: "M16.5913 12.0757C16.5913 14.6524 14.5025 16.7412 11.9258 16.7412C9.34909 16.7412 7.26025 14.6524 7.26025 12.0757C7.26025 9.49899 9.34909 7.41016 11.9258 7.41016C14.5025 7.41016 16.5913 9.49899 16.5913 12.0757Z", fill: 'none', strokeWidth: "1.25" }),
+        React__default["default"].createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M10.686 11.8942C11.351 11.8942 11.89 11.3551 11.89 10.6901C11.89 10.2819 11.6868 9.92107 11.3761 9.70333C11.5645 9.656 11.7617 9.63086 11.9647 9.63086C13.2947 9.63086 14.3729 10.709 14.3729 12.039C14.3729 13.3689 13.2947 14.4471 11.9647 14.4471C10.6348 14.4471 9.55664 13.3689 9.55664 12.039C9.55664 11.791 9.59412 11.5518 9.66373 11.3266C9.87638 11.6674 10.2547 11.8942 10.686 11.8942Z" })));
 };
 
 var Box = styled__default["default"].div(templateObject_1$L || (templateObject_1$L = __makeTemplateObject(["\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"], ["\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"])), styledSystem.background, styledSystem.border, styledSystem.layout, styledSystem.position, styledSystem.space);
