@@ -2276,7 +2276,7 @@ var getBadgeColor = function (_a) {
     }
     return theme.colors.contrast;
 };
-var Wrapper$1 = styled__default["default"].div(templateObject_1$d || (templateObject_1$d = __makeTemplateObject(["\n  display: inline-flex;\n  padding: ", ";\n  background: ", ";\n  color: ", ";\n  border-radius: 16px;\n"], ["\n  display: inline-flex;\n  padding: ", ";\n  background: ", ";\n  color: ", ";\n  border-radius: 16px;\n"])), function (_a) {
+var Wrapper$1 = styled__default["default"].div(templateObject_1$d || (templateObject_1$d = __makeTemplateObject(["\n  display: inline-flex;\n  padding: ", ";\n  background: ", ";\n  color: ", ";\n  border-radius: 16px;\n  height: 20px;\n"], ["\n  display: inline-flex;\n  padding: ", ";\n  background: ", ";\n  color: ", ";\n  border-radius: 16px;\n  height: 20px;\n"])), function (_a) {
     var isMenu = _a.isMenu;
     return isMenu ? '2px 8px' : '4px 12px';
 }, getBadgeBg, getBadgeColor);
@@ -2288,7 +2288,7 @@ var StyledText$1 = styled__default["default"](Text)(templateObject_2$9 || (templ
     return fontWeight || "600";
 }, function (_a) {
     var lineHeight = _a.lineHeight;
-    return lineHeight || '1.5';
+    return lineHeight || '1';
 });
 var Badge = function (_a) {
     var children = _a.children, badgeType = _a.badgeType, fontSize = _a.fontSize, fontWeight = _a.fontWeight, isMenu = _a.isMenu, lineHeight = _a.lineHeight;
