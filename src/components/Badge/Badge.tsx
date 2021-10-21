@@ -72,12 +72,13 @@ const Wrapper = styled.div<WrapperProps>`
   background: ${getBadgeBg};
   color: ${getBadgeColor};
   border-radius: 16px;
+  height: 20px;
 `;
 
 const StyledText = styled(Text)<TextProps>`
   font-size: ${({ fontSize }) => fontSize || "10px" };
   font-weight: ${({ fontWeight }) => fontWeight || "600" };
-  line-height: ${({ lineHeight }) => lineHeight || '1.5'};
+  line-height: ${({ lineHeight }) => lineHeight || '1'};
 `
 
 const Badge: FC<BadgeProps> = ({ children, badgeType,fontSize,fontWeight,isMenu, lineHeight }) => {
