@@ -78,7 +78,7 @@ const Wrapper = styled.div<WrapperProps>`
 const StyledText = styled(Text)<TextProps>`
   font-size: ${({ fontSize }) => fontSize || "10px" };
   font-weight: ${({ fontWeight }) => fontWeight || "600" };
-  line-height: ${({ lineHeight }) => lineHeight || '1'};
+  line-height: ${({ lineHeight }) => lineHeight || '1.1'};
 `
 
 const Badge: FC<BadgeProps> = ({ children, badgeType,fontSize,fontWeight,isMenu, lineHeight }) => {

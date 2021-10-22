@@ -2288,7 +2288,7 @@ var StyledText$1 = styled__default["default"](Text)(templateObject_2$9 || (templ
     return fontWeight || "600";
 }, function (_a) {
     var lineHeight = _a.lineHeight;
-    return lineHeight || '1';
+    return lineHeight || '1.1';
 });
 var Badge = function (_a) {
     var children = _a.children, badgeType = _a.badgeType, fontSize = _a.fontSize, fontWeight = _a.fontWeight, isMenu = _a.isMenu, lineHeight = _a.lineHeight;
