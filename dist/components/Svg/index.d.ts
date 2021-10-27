@@ -77,5 +77,7 @@ export { default as FavoriteFullIcon } from './Icons/FavoriteFull';
 export { default as FavoriteEmptyIcon } from './Icons/FavoriteEmpty';
 export { default as ShareIcon } from './Icons/Share';
 export { default as ViewIcon } from './Icons/View';
+export { default as LevelIcon } from './Icons/Level';
+export { default as RobiBoostIcon } from './Icons/RobiBoost';
 export { default as Svg } from "./Svg";
 export type { SvgProps } from "./types";
