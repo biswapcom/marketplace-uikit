@@ -72,7 +72,6 @@ const Wrapper = styled.div<WrapperProps>`
   background: ${getBadgeBg};
   color: ${getBadgeColor};
   border-radius: 16px;
-  height: 20px;
 `;
 
 const StyledText = styled(Text)<TextProps>`
