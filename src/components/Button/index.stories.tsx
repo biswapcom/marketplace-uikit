@@ -52,23 +52,7 @@ export const Default: React.FC = () => {
           Disabled
         </Button>
       </Box>
-      <Box>
-        <Button m="8px" variant="transparent">
-          Transparent
-        </Button>
-        <Button variant="transparent" disabled scale='md'>
-          Transparent
-        </Button>
-        <Button variant="transparent" disabled scale='xl'>
-          Transparent
-        </Button>
-        <Button variant="transparent"  scale='xl'>
-          Transparent
-        </Button>
-        <Button variant="transparent" disabled>
-          Transpa
-        </Button>
-      </Box>
+
       <Box>
         <Button variant="transparent" disabled scale='xl'>
           Transparent

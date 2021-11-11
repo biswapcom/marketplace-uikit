@@ -20,10 +20,10 @@ const getDisabledStyles = ({ isLoading, theme }: ThemedButtonProps) => {
   return `
     &:disabled,
     &.biswap-button--disabled {
-      background-color: ${theme.colors.backgroundDisabled};
+      background-color: ${theme.colors.tertiary};
       border-color: ${theme.colors.backgroundDisabled};
       box-shadow: none;
-      color: ${theme.colors.textDisabled};
+      color: ${theme.colors.text};
       cursor: not-allowed;
     }
   `;
