@@ -38,6 +38,7 @@ const Input = styled.input<InputProps>`
   border-color: ${getBorderColor};
   color: ${({ theme, isLight }) => ( isLight ? theme.colors.textSubtle : theme.colors.text )};
   border-width: ${({ isLight }) => ( isLight ? '0px' : '1px' )};
+  box-shadow: none;
   border-style: solid;
   display: block;
   font-size: 12px;
