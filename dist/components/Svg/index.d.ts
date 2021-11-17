@@ -79,5 +79,6 @@ export { default as ShareIcon } from './Icons/Share';
 export { default as ViewIcon } from './Icons/View';
 export { default as LevelIcon } from './Icons/Level';
 export { default as RobiBoostIcon } from './Icons/RobiBoost';
+export { default as MarketBagIcon } from './Icons/MarketBag';
 export { default as Svg } from "./Svg";
 export type { SvgProps } from "./types";
