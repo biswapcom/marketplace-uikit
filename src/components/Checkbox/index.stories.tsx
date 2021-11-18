@@ -16,6 +16,9 @@ export const Default: React.FC = () => {
       <div>
         <Checkbox scale="sm" />
       </div>
+        <div>
+            <Checkbox scale="xs" />
+        </div>
     </>
   );
 };
