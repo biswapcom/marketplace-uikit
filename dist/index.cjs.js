@@ -2857,9 +2857,31 @@ var ModalBody$1 = styled__default["default"].div(templateObject_4$2 || (template
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
+var useOutsideClickHandler = function (ref, handler, enabledListener) {
+    if (enabledListener === void 0) { enabledListener = false; }
+    React.useEffect(function () {
+        var listener = function (event) {
+            // Do nothing if clicking ref's element or descendent elements
+            if (!enabledListener || !ref.current || ref.current.contains(event.target)) {
+                return;
+            }
+            // eslint-disable-next-line no-unused-expressions
+            handler && handler();
+            console.log('USING EVENT LISTENERS');
+        };
+        document.addEventListener("mousedown", listener);
+        document.addEventListener("touchstart", listener);
+        return function () {
+            document.removeEventListener("mousedown", listener);
+            document.removeEventListener("touchstart", listener);
+        };
+    }, [enabledListener, ref, handler]);
+};
 var Modal = function (_a) {
     var title = _a.title, onDismiss = _a.onDismiss, onBack = _a.onBack, children = _a.children, _b = _a.hideCloseButton, hideCloseButton = _b === void 0 ? false : _b;
-    return (React__default["default"].createElement(StyledModal$1, null,
+    var modalRef = React.useRef(null);
+    useOutsideClickHandler(modalRef, onDismiss, true);
+    return (React__default["default"].createElement(StyledModal$1, { ref: modalRef },
         React__default["default"].createElement(ModalHeader, null,
             React__default["default"].createElement(ModalTitle, null,
                 onBack && (React__default["default"].createElement(IconButton, { variant: "text", onClick: onBack, "area-label": "go back", mr: "8px" },
@@ -2932,7 +2954,7 @@ var ModalProvider = function (_a) {
     var children = _a.children;
     var _b = React.useState(false), isOpen = _b[0], setIsOpen = _b[1];
     var _c = React.useState(), modalNode = _c[0], setModalNode = _c[1];
-    var _d = React.useState(true), closeOnOverlayClick = _d[0], setCloseOnOverlayClick = _d[1];
+    var _d = React.useState(true); _d[0]; var setCloseOnOverlayClick = _d[1];
     var handlePresent = function (node) {
         setModalNode(node);
         setIsOpen(true);
@@ -2941,18 +2963,18 @@ var ModalProvider = function (_a) {
         setModalNode(undefined);
         setIsOpen(false);
     };
-    var handleOverlayDismiss = function () {
-        if (closeOnOverlayClick) {
-            handleDismiss();
-        }
-    };
+    // const handleOverlayDismiss = () => {
+    //   if (closeOnOverlayClick) {
+    //     handleDismiss();
+    //   }
+    // };
     return (React__default["default"].createElement(Context.Provider, { value: {
             onPresent: handlePresent,
             onDismiss: handleDismiss,
             setCloseOnOverlayClick: setCloseOnOverlayClick,
         } },
         isOpen && (React__default["default"].createElement(ModalWrapper, null,
-            React__default["default"].createElement(Overlay, { show: true, onClick: handleOverlayDismiss }),
+            React__default["default"].createElement(Overlay, { show: true }),
             React__default["default"].isValidElement(modalNode) &&
                 React__default["default"].cloneElement(modalNode, {
                     onDismiss: handleDismiss,
