@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, MutableRefObject } from "react";
 import styled from "styled-components";
 import Heading from "../../components/Heading/Heading";
 import Flex from "../../components/Box/Flex";
@@ -13,7 +13,7 @@ interface Props extends InjectedProps {
 }
 
 interface StyledModalProps {
-  ref?: React.MutableRefObject<HTMLDivElement | null>;
+  ref?: MutableRefObject<HTMLDivElement | null>;
 }
 
 const StyledModal = styled.div<StyledModalProps>`
@@ -57,30 +57,6 @@ const ModalBody = styled.div`
     padding: 0 32px 32px;
   }
 `
-const useOutsideClickHandler = (ref: any, handler: (() => void) | undefined, enabledListener = false) => {
-  useEffect(
-    () => {
-      const listener = (event: any) => {
-        // Do nothing if clicking ref's element or descendent elements
-        if (!enabledListener || !ref.current || ref.current.contains(event.target)) {
-            return;
-        }
-        // eslint-disable-next-line no-unused-expressions
-        handler && handler();
-        console.log('USING EVENT LISTENERS')
-
-      };
-      document.addEventListener("mousedown", listener);
-      document.addEventListener("touchstart", listener);
-      return () => {
-        document.removeEventListener("mousedown", listener);
-        document.removeEventListener("touchstart", listener);
-      };
-    },
-    [enabledListener, ref, handler]
-  )
-};
-
 
 const Modal: React.FC<Props> = ({
   title,
@@ -89,9 +65,24 @@ const Modal: React.FC<Props> = ({
   children,
   hideCloseButton = false,
 }) => {
-  const modalRef = useRef(null);
+  const modalRef = useRef<HTMLDivElement>(null);
 
-  useOutsideClickHandler(modalRef, onDismiss, true);
+  useEffect(
+    () => {
+      const listener = (event: any) => {
+        if (modalRef.current && !modalRef.current.contains(event.target)) {
+          onDismiss && onDismiss();
+        }
+      };
+      document.addEventListener("mousedown", listener);
+      document.addEventListener("touchstart", listener);
+      return () => {
+        document.removeEventListener("mousedown", listener);
+        document.removeEventListener("touchstart", listener);
+      };
+    },
+    [modalRef.current, onDismiss]
+  )
 
   return (
     <StyledModal ref={modalRef}>
