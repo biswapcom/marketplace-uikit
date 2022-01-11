@@ -2859,7 +2859,21 @@ var ModalBody$1 = styled__default["default"].div(templateObject_4$2 || (template
 });
 var Modal = function (_a) {
     var title = _a.title, onDismiss = _a.onDismiss, onBack = _a.onBack, children = _a.children, _b = _a.hideCloseButton, hideCloseButton = _b === void 0 ? false : _b;
-    return (React__default["default"].createElement(StyledModal$1, null,
+    var modalRef = React.useRef(null);
+    React.useEffect(function () {
+        var listener = function (event) {
+            if (modalRef.current && !modalRef.current.contains(event.target)) {
+                onDismiss && onDismiss();
+            }
+        };
+        document.addEventListener("mousedown", listener);
+        document.addEventListener("touchstart", listener);
+        return function () {
+            document.removeEventListener("mousedown", listener);
+            document.removeEventListener("touchstart", listener);
+        };
+    }, [modalRef.current, onDismiss]);
+    return (React__default["default"].createElement(StyledModal$1, { ref: modalRef },
         React__default["default"].createElement(ModalHeader, null,
             React__default["default"].createElement(ModalTitle, null,
                 onBack && (React__default["default"].createElement(IconButton, { variant: "text", onClick: onBack, "area-label": "go back", mr: "8px" },
@@ -2933,13 +2947,16 @@ var ModalProvider = function (_a) {
     var _b = React.useState(false), isOpen = _b[0], setIsOpen = _b[1];
     var _c = React.useState(), modalNode = _c[0], setModalNode = _c[1];
     var _d = React.useState(true), closeOnOverlayClick = _d[0], setCloseOnOverlayClick = _d[1];
+    var bodyStyle = document.body.style;
     var handlePresent = function (node) {
         setModalNode(node);
         setIsOpen(true);
+        bodyStyle.overflow = 'hidden';
     };
     var handleDismiss = function () {
         setModalNode(undefined);
         setIsOpen(false);
+        bodyStyle.overflow = 'auto';
     };
     var handleOverlayDismiss = function () {
         if (closeOnOverlayClick) {

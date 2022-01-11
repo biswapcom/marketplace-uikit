@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, MutableRefObject } from "react";
 import styled from "styled-components";
 import Heading from "../../components/Heading/Heading";
 import Flex from "../../components/Box/Flex";
@@ -12,7 +12,11 @@ interface Props extends InjectedProps {
   onBack?: () => void;
 }
 
-const StyledModal = styled.div`
+interface StyledModalProps {
+  ref?: MutableRefObject<HTMLDivElement | null>;
+}
+
+const StyledModal = styled.div<StyledModalProps>`
   background-color: #fff;
   border-radius: 16px 16px 0 0;  
   width: 100%;
@@ -60,27 +64,49 @@ const Modal: React.FC<Props> = ({
   onBack,
   children,
   hideCloseButton = false,
-}) => (
-  <StyledModal>
-    <ModalHeader>
-      <ModalTitle>
-        {onBack && (
-          <IconButton variant="text" onClick={onBack} area-label="go back" mr="8px">
-            <ArrowBackIcon color="primary" />
+}) => {
+  const modalRef = useRef<HTMLDivElement>(null);
+
+  useEffect(
+    () => {
+      const listener = (event: any) => {
+        if (modalRef.current && !modalRef.current.contains(event.target)) {
+          onDismiss && onDismiss();
+        }
+      };
+      document.addEventListener("mousedown", listener);
+      document.addEventListener("touchstart", listener);
+      return () => {
+        document.removeEventListener("mousedown", listener);
+        document.removeEventListener("touchstart", listener);
+      };
+    },
+    [modalRef.current, onDismiss]
+  )
+
+  return (
+    <StyledModal ref={modalRef}>
+      <ModalHeader>
+        <ModalTitle>
+          {onBack && (
+            <IconButton variant="text" onClick={onBack} area-label="go back" mr="8px">
+              <ArrowBackIcon color="primary"/>
+            </IconButton>
+          )}
+          <Heading>{title}</Heading>
+        </ModalTitle>
+        {!hideCloseButton && (
+          <IconButton variant="text" className="closeModal" scale="sm" ml="12px" onClick={onDismiss}
+                      aria-label="Close the dialog">
+            <CloseIcon width="24px" color="card"/>
           </IconButton>
         )}
-        <Heading>{title}</Heading>
-      </ModalTitle>
-      {!hideCloseButton && (
-        <IconButton variant="text" className="closeModal" scale="sm" ml="12px" onClick={onDismiss} aria-label="Close the dialog">
-          <CloseIcon width="24px" color="card" />
-        </IconButton>
-      )}
-    </ModalHeader>
-    <ModalBody>
-      {children}
-    </ModalBody>
-  </StyledModal>
-);
+      </ModalHeader>
+      <ModalBody>
+        {children}
+      </ModalBody>
+    </StyledModal>
+  );
+}
 
 export default Modal;
