@@ -36,15 +36,18 @@ const ModalProvider: React.FC = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [modalNode, setModalNode] = useState<React.ReactNode>();
   const [closeOnOverlayClick, setCloseOnOverlayClick] = useState(true);
+  const {style: bodyStyle} = document.body;
 
   const handlePresent = (node: React.ReactNode) => {
     setModalNode(node);
     setIsOpen(true);
+    bodyStyle.overflow = 'hidden';
   };
 
   const handleDismiss = () => {
     setModalNode(undefined);
     setIsOpen(false);
+    bodyStyle.overflow = 'auto';
   };
 
   const handleOverlayDismiss = () => {
@@ -63,7 +66,7 @@ const ModalProvider: React.FC = ({ children }) => {
     >
       {isOpen && (
         <ModalWrapper>
-          <Overlay show onClick={handleOverlayDismiss} />
+          <Overlay show onClick={handleOverlayDismiss}/>
           {React.isValidElement(modalNode) &&
             React.cloneElement(modalNode, {
               onDismiss: handleDismiss,
