@@ -81,5 +81,8 @@ export { default as LevelIcon } from './Icons/Level';
 export { default as RobiBoostIcon } from './Icons/RobiBoost';
 export { default as MarketBagIcon } from './Icons/MarketBag';
 export { default as FilterIcon } from './Icons/Filter';
+export { default as CheckmarkCircleFilledIcon } from './Icons/CheckCircleFilled';
+export { default as BinanceUsdIcon } from './Icons/BinanceUsd';
+export { default as UsdtIcon } from './Icons/USDT';
 export { default as Svg } from "./Svg";
 export type { SvgProps } from "./types";
