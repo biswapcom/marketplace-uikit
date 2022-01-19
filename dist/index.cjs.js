@@ -956,7 +956,7 @@ var Icon$b = function (props) {
 };
 
 var Icon$a = function (props) {
-    return (React__default["default"].createElement(Svg, { width: "20", height: "20", viewBox: "0 0 20 20", fill: "none" },
+    return (React__default["default"].createElement(Svg, __assign({ viewBox: "0 0 20 20", fill: "none" }, props),
         React__default["default"].createElement("rect", { x: "1", y: "1", width: "18", height: "18", rx: "5", fill: "#E4EFFF", stroke: "white", strokeWidth: "2" }),
         React__default["default"].createElement("path", { d: "M7 7V13", stroke: "#749BD8", strokeLinecap: "round" }),
         React__default["default"].createElement("path", { d: "M10 7V13", stroke: "#749BD8", strokeLinecap: "round" }),
