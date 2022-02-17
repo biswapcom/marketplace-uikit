@@ -88,5 +88,6 @@ export {default as UsdtIcon} from './Icons/USDT'
 export {default as RangeThumbIcon} from './Icons/SliderThumb'
 export {default as ContractIcon} from './Icons/Contract'
 export {default as BagIcon} from './Icons/Bag'
+export {default as PlanetIcon} from './Icons/Planet'
 export { default as Svg } from "./Svg";
 export type { SvgProps } from "./types";
