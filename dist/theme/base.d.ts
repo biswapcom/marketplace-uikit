@@ -31,8 +31,9 @@ declare const _default: {
     };
     zIndices: {
         tooltip: number;
-        fixedElement: number;
+        stickyElement: number;
         dropdown: number;
+        fixedElement: number;
         modal: number;
     };
 };

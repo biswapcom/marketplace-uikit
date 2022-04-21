@@ -63,6 +63,7 @@ export declare type Colors = {
 export declare type ZIndices = {
     tooltip: number;
     fixedElement: number;
+    stickyElement: number;
     dropdown: number;
     modal: number;
 };

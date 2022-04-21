@@ -2859,8 +2859,9 @@ var radii = {
 };
 var zIndices = {
     tooltip: 70,
-    fixedElement: 80,
-    dropdown: 90,
+    stickyElement: 80,
+    dropdown: 85,
+    fixedElement: 90,
     modal: 100,
 };
 var base = {
