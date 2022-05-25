@@ -108,7 +108,7 @@ var rotate$2 = keyframes(templateObject_1$P || (templateObject_1$P = __makeTempl
 var spinStyle = css(templateObject_2$n || (templateObject_2$n = __makeTemplateObject(["\n  animation: ", " 2s linear infinite;\n"], ["\n  animation: ", " 2s linear infinite;\n"])), rotate$2);
 var Svg = styled.svg(templateObject_3$a || (templateObject_3$a = __makeTemplateObject(["\n  fill: ", ";\n  flex-shrink: 0;\n\n  ", "\n  ", "\n"], ["\n  fill: ", ";\n  flex-shrink: 0;\n\n  ", "\n  ", "\n"])), function (_a) {
     var theme = _a.theme, color = _a.color;
-    return getThemeValue("colors.".concat(color), color)(theme);
+    return getThemeValue("colors." + color, color)(theme);
 }, function (_a) {
     var spin = _a.spin;
     return spin && spinStyle;
@@ -248,7 +248,7 @@ var getDisabledStyles = function (_a) {
     if (isLoading === true) {
         return "\n      &:disabled,\n      &.biswap-button--disabled {\n        cursor: not-allowed;\n      }\n    ";
     }
-    return "\n    &:disabled,\n    &.biswap-button--disabled {\n      background-color: ".concat(theme.colors.tertiary, ";\n      border-color: ").concat(theme.colors.backgroundDisabled, ";\n      box-shadow: none;\n      color: ").concat(theme.colors.text, ";\n      cursor: not-allowed;\n    }\n  ");
+    return "\n    &:disabled,\n    &.biswap-button--disabled {\n      background-color: " + theme.colors.tertiary + ";\n      border-color: " + theme.colors.backgroundDisabled + ";\n      box-shadow: none;\n      color: " + theme.colors.text + ";\n      cursor: not-allowed;\n    }\n  ";
 };
 var getOpacity = function (_a) {
     var _b = _a.$isLoading, $isLoading = _b === void 0 ? false : _b;
@@ -1460,7 +1460,7 @@ var Title = styled.div(templateObject_1$J || (templateObject_1$J = __makeTemplat
 var withHandlerSpacing = 32 + 12 + 8; // button size + inner spacing + handler position
 var Details = styled.div(templateObject_2$l || (templateObject_2$l = __makeTemplateObject(["\n  flex: 1;\n  padding-bottom: 16px;\n  padding-left: 16px;\n  padding-right: ", ";\n  padding-top: 16px;\n"], ["\n  flex: 1;\n  padding-bottom: 16px;\n  padding-left: 16px;\n  padding-right: ", ";\n  padding-top: 16px;\n"])), function (_a) {
     var hasHandler = _a.hasHandler;
-    return (hasHandler ? "".concat(withHandlerSpacing, "px") : "12px");
+    return (hasHandler ? withHandlerSpacing + "px" : "12px");
 });
 var CloseHandler = styled.div(templateObject_3$9 || (templateObject_3$9 = __makeTemplateObject(["\n  border-radius: 0 16px 16px 0;\n  right: 8px;\n  position: absolute;\n  top: 8px;\n"], ["\n  border-radius: 0 16px 16px 0;\n  right: 8px;\n  position: absolute;\n  top: 8px;\n"])));
 var StyledAlert = styled(Flex)(templateObject_4$6 || (templateObject_4$6 = __makeTemplateObject(["\n  position: relative;\n  overflow: hidden;\n  background-color: #fff;\n  border-radius: 16px;\n  box-shadow: 0px 20px 36px -8px rgba(14, 14, 44, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.05);\n"], ["\n  position: relative;\n  overflow: hidden;\n  background-color: #fff;\n  border-radius: 16px;\n  box-shadow: 0px 20px 36px -8px rgba(14, 14, 44, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.05);\n"])));
@@ -1535,7 +1535,7 @@ var insertSeparators = function (items, separator) {
             return __spreadArray(__spreadArray([], accum, true), [item], false);
         }
         return __spreadArray(__spreadArray([], accum, true), [
-            React.createElement(Separator, { "aria-hidden": true, key: "seperator-".concat(index) }, separator),
+            React.createElement(Separator, { "aria-hidden": true, key: "seperator-" + index }, separator),
             item,
         ], false);
     }, []);
@@ -1545,7 +1545,7 @@ var Breadcrumbs = function (_a) {
     var _b = _a.separator, separator = _b === void 0 ? DefaultSeparator : _b, children = _a.children;
     var validItems = Children.toArray(children).filter(function (child) { return isValidElement(child); });
     var items = insertSeparators(validItems, separator);
-    return (React.createElement(StyledBreadcrumbs, null, items.map(function (item, index) { return (React.createElement("li", { key: "child-".concat(index) }, item)); })));
+    return (React.createElement(StyledBreadcrumbs, null, items.map(function (item, index) { return (React.createElement("li", { key: "child-" + index }, item)); })));
 };
 var templateObject_1$F, templateObject_2$j;
 
@@ -1750,34 +1750,34 @@ var templateObject_1$w, templateObject_2$i;
 var bunnyFall = keyframes(templateObject_1$v || (templateObject_1$v = __makeTemplateObject(["\n  0% {\n    opacity: 1;\n    transform: translate(0, -100%) rotateZ(0deg);\n  }\n\n  75% {\n    opacity: 1;\n    transform: translate(100px, 75vh) rotateZ(270deg);\n  }\n\n  100% {\n    opacity: 0;\n    transform: translate(150px, 100vh) rotateZ(360deg);\n  }\n"], ["\n  0% {\n    opacity: 1;\n    transform: translate(0, -100%) rotateZ(0deg);\n  }\n\n  75% {\n    opacity: 1;\n    transform: translate(100px, 75vh) rotateZ(270deg);\n  }\n\n  100% {\n    opacity: 0;\n    transform: translate(150px, 100vh) rotateZ(360deg);\n  }\n"])));
 var Bunny = styled.div(templateObject_2$h || (templateObject_2$h = __makeTemplateObject(["\n  display: inline-flex;\n  position: fixed;\n  top: 0;\n  left: ", ";\n  transform: translate3d(0, -100%, 0);\n  user-select: none;\n  pointer-events: none;\n  z-index: 99999;\n\n  animation-name: ", ";\n  animation-duration: ", ";\n  animation-timing-function: linear;\n  animation-iteration-count: ", ";\n  animation-play-state: running;\n\n  &:nth-child(5n + 5) {\n    animation-delay: ", ";\n  }\n\n  &:nth-child(3n + 2) {\n    animation-delay: ", ";\n  }\n\n  &:nth-child(2n + 5) {\n    animation-delay: ", ";\n  }\n\n  &:nth-child(3n + 10) {\n    animation-delay: ", ";\n  }\n\n  &:nth-child(7n + 2) {\n    animation-delay: ", ";\n  }\n\n  &:nth-child(4n + 5) {\n    animation-delay: ", ";\n  }\n\n  &:nth-child(3n + 7) {\n    animation-delay: ", ";\n  }\n"], ["\n  display: inline-flex;\n  position: fixed;\n  top: 0;\n  left: ", ";\n  transform: translate3d(0, -100%, 0);\n  user-select: none;\n  pointer-events: none;\n  z-index: 99999;\n\n  animation-name: ", ";\n  animation-duration: ", ";\n  animation-timing-function: linear;\n  animation-iteration-count: ", ";\n  animation-play-state: running;\n\n  &:nth-child(5n + 5) {\n    animation-delay: ", ";\n  }\n\n  &:nth-child(3n + 2) {\n    animation-delay: ", ";\n  }\n\n  &:nth-child(2n + 5) {\n    animation-delay: ", ";\n  }\n\n  &:nth-child(3n + 10) {\n    animation-delay: ", ";\n  }\n\n  &:nth-child(7n + 2) {\n    animation-delay: ", ";\n  }\n\n  &:nth-child(4n + 5) {\n    animation-delay: ", ";\n  }\n\n  &:nth-child(3n + 7) {\n    animation-delay: ", ";\n  }\n"])), function (_a) {
     var position = _a.position;
-    return "".concat(position, "vw");
+    return position + "vw";
 }, bunnyFall, function (_a) {
     var duration = _a.duration;
-    return "".concat(duration, "s");
+    return duration + "s";
 }, function (_a) {
     var iterations = _a.iterations;
     return (Number.isFinite(iterations) ? String(iterations) : "infinite");
 }, function (_a) {
     var duration = _a.duration;
-    return "".concat((duration / 10) * 1.3, "s");
+    return (duration / 10) * 1.3 + "s";
 }, function (_a) {
     var duration = _a.duration;
-    return "".concat((duration / 10) * 1.5, "s");
+    return (duration / 10) * 1.5 + "s";
 }, function (_a) {
     var duration = _a.duration;
-    return "".concat((duration / 10) * 1.7, "s");
+    return (duration / 10) * 1.7 + "s";
 }, function (_a) {
     var duration = _a.duration;
-    return "".concat((duration / 10) * 2.7, "s");
+    return (duration / 10) * 2.7 + "s";
 }, function (_a) {
     var duration = _a.duration;
-    return "".concat((duration / 10) * 3.5, "s");
+    return (duration / 10) * 3.5 + "s";
 }, function (_a) {
     var duration = _a.duration;
-    return "".concat((duration / 10) * 5.5, "s");
+    return (duration / 10) * 5.5 + "s";
 }, function (_a) {
     var duration = _a.duration;
-    return "".concat((duration / 10) * 8, "s");
+    return (duration / 10) * 8 + "s";
 });
 var FallingBunnies = function (_a) {
     var _b = _a.count, count = _b === void 0 ? 30 : _b, _c = _a.size, size = _c === void 0 ? 32 : _c, _d = _a.iterations, iterations = _d === void 0 ? Infinity : _d, _e = _a.duration, duration = _e === void 0 ? 10 : _e;
@@ -1789,7 +1789,7 @@ var templateObject_1$v, templateObject_2$h;
 
 var getColor = function (_a) {
     var color = _a.color, theme = _a.theme;
-    return getThemeValue("colors.".concat(color), color)(theme);
+    return getThemeValue("colors." + color, color)(theme);
 };
 var getFontSize = function (_a) {
     var fontSize = _a.fontSize, small = _a.small;
@@ -1803,7 +1803,7 @@ var Text = styled.span(templateObject_1$u || (templateObject_1$u = __makeTemplat
     return lineHeight || "1.5";
 }, function (_a) {
     var textTransform = _a.textTransform;
-    return textTransform && "text-transform: ".concat(textTransform, ";");
+    return textTransform && "text-transform: " + textTransform + ";";
 }, space, typography);
 Text.defaultProps = {
     color: "text",
@@ -1894,7 +1894,7 @@ var BackgroundImage = function (_a) {
             entries.forEach(function (entry) {
                 var isIntersecting = entry.isIntersecting;
                 if (isIntersecting) {
-                    img.style.backgroundImage = "url(\"".concat(src, "\")");
+                    img.style.backgroundImage = "url(\"" + src + "\")";
                     observer.disconnect();
                 }
             });
@@ -2137,7 +2137,7 @@ var getOutlineStyles = function (_a) {
     if (outline) {
         var themeColorKey = styleVariants$1[variantKey].backgroundColor;
         var color = theme.colors[themeColorKey];
-        return "\n      color: ".concat(color, ";\n      background: transparent;\n      border: 2px solid ").concat(color, ";\n    ");
+        return "\n      color: " + color + ";\n      background: transparent;\n      border: 2px solid " + color + ";\n    ";
     }
     return "";
 };
@@ -2203,7 +2203,7 @@ var styleVariants = (_a$1 = {},
     },
     _a$1);
 
-var Bar = styled.div(templateObject_1$j || (templateObject_1$j = __makeTemplateObject(["\n  position: absolute;\n  top: 0;\n  left: 0;\n  background-color: ", ";\n  height: 16px;\n  transition: width 200ms ease;\n"], ["\n  position: absolute;\n  top: 0;\n  left: 0;\n  background-color: ", ";\n  height: 16px;\n  transition: width 200ms ease;\n"])), function (props) { return (props.primary ? props.theme.colors.secondary : "".concat(props.theme.colors.secondary, "80")); });
+var Bar = styled.div(templateObject_1$j || (templateObject_1$j = __makeTemplateObject(["\n  position: absolute;\n  top: 0;\n  left: 0;\n  background-color: ", ";\n  height: 16px;\n  transition: width 200ms ease;\n"], ["\n  position: absolute;\n  top: 0;\n  left: 0;\n  background-color: ", ";\n  height: 16px;\n  transition: width 200ms ease;\n"])), function (props) { return (props.primary ? props.theme.colors.secondary : props.theme.colors.secondary + "80"); });
 Bar.defaultProps = {
     primary: false,
 };
@@ -2239,10 +2239,10 @@ var stepGuard = function (step) {
 var Progress = function (_a) {
     var _b = _a.variant, variant = _b === void 0 ? variants.ROUND : _b, _c = _a.primaryStep, primaryStep = _c === void 0 ? 0 : _c, _d = _a.secondaryStep, secondaryStep = _d === void 0 ? null : _d, _e = _a.showProgressBunny, showProgressBunny = _e === void 0 ? false : _e;
     return (React.createElement(StyledProgress, { variant: variant },
-        showProgressBunny && (React.createElement(ProgressBunnyWrapper, { style: { left: "".concat(stepGuard(primaryStep), "%") } },
+        showProgressBunny && (React.createElement(ProgressBunnyWrapper, { style: { left: stepGuard(primaryStep) + "%" } },
             React.createElement(Icon$Z, null))),
-        React.createElement(Bar, { primary: true, style: { width: "".concat(stepGuard(primaryStep), "%") } }),
-        secondaryStep ? React.createElement(Bar, { style: { width: "".concat(stepGuard(secondaryStep), "%") } }) : null));
+        React.createElement(Bar, { primary: true, style: { width: stepGuard(primaryStep) + "%" } }),
+        secondaryStep ? React.createElement(Bar, { style: { width: stepGuard(secondaryStep) + "%" } }) : null));
 };
 
 var bunnyHeadMain = "data:image/svg+xml,%3Csvg%20width%3D%2224%22%20height%3D%2232%22%20viewBox%3D%220%200%2024%2032%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Crect%20y%3D%2218%22%20width%3D%2217%22%20height%3D%2210%22%20fill%3D%22%231FC7D4%22%2F%3E%3Cpath%20d%3D%22M7.50675%2023.7056C6.14677%2025.0656%207.73758%2027.2292%209.75419%2029.2458C11.7708%2031.2624%2013.9344%2032.8532%2015.2944%2031.4933C16.6543%2030.1333%2015.9641%2027.0691%2013.9475%2025.0525C11.9309%2023.0359%208.86673%2022.3457%207.50675%2023.7056Z%22%20fill%3D%22%231FC7D4%22%2F%3E%3Cpath%20d%3D%22M13.507%2021.706C12.1463%2023.0666%2013.7379%2025.2313%2015.7555%2027.2489C17.7731%2029.2665%2019.9378%2030.8581%2021.2984%2029.4974C22.6591%2028.1368%2021.9685%2025.0711%2019.9509%2023.0535C17.9333%2021.0359%2014.8676%2020.3453%2013.507%2021.706Z%22%20fill%3D%22%231FC7D4%22%2F%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M11.7694%205.63421C11.8457%206.02664%2011.9158%206.4375%2011.9836%206.85716C11.6151%206.85766%2011.2482%206.87522%2010.8839%206.90895C10.6029%206.29464%2010.2694%205.67199%209.88441%205.05277C7.39613%201.05079%205.06199%200.901096%202.98861%202.01265C0.915239%203.12421%200.810677%205.89597%203.28297%208.59188C3.57049%208.90541%203.86254%209.23841%204.15744%209.58036C1.66027%2011.5156%200%2014.291%200%2017.2695C0%2022.8292%205.78518%2024%2012%2024C18.2148%2024%2024%2022.8292%2024%2017.2695C24%2013.8488%2021.8101%2010.6958%2018.6776%208.77602C18.8852%207.81022%2019%206.74856%2019%205.63421C19%201.17171%2017.159%200%2014.888%200C12.6171%200%2011.1155%202.27116%2011.7694%205.63421Z%22%20fill%3D%22url%28%23paint0_linear%29%22%2F%3E%3Cpath%20d%3D%22M12.7284%2016.4446C12.796%2017.3149%2012.4446%2019.0556%2010.498%2019.0556%22%20stroke%3D%22%23452A7A%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M12.7457%2016.4446C12.6781%2017.3149%2013.0296%2019.0556%2014.9761%2019.0556%22%20stroke%3D%22%23452A7A%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M9%2014.5C9%2015.6046%208.55228%2016%208%2016C7.44772%2016%207%2015.6046%207%2014.5C7%2013.3954%207.44772%2013%208%2013C8.55228%2013%209%2013.3954%209%2014.5Z%22%20fill%3D%22%23452A7A%22%2F%3E%3Cpath%20d%3D%22M18%2014.5C18%2015.6046%2017.5523%2016%2017%2016C16.4477%2016%2016%2015.6046%2016%2014.5C16%2013.3954%2016.4477%2013%2017%2013C17.5523%2013%2018%2013.3954%2018%2014.5Z%22%20fill%3D%22%23452A7A%22%2F%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22paint0_linear%22%20x1%3D%2212%22%20y1%3D%220%22%20x2%3D%2212%22%20y2%3D%2224%22%20gradientUnits%3D%22userSpaceOnUse%22%3E%3Cstop%20stop-color%3D%22%2353DEE9%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%231FC7D4%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3C%2Fsvg%3E";
@@ -2272,7 +2272,7 @@ var BarBackground = styled.div(templateObject_6$1 || (templateObject_6$1 = __mak
 });
 var BarProgress = styled.div(templateObject_7$1 || (templateObject_7$1 = __makeTemplateObject(["\n  position: absolute;\n  width: ", ";\n  height: 10px;\n  top: 18px;\n\n  background: ", ";\n"], ["\n  position: absolute;\n  width: ", ";\n  height: 10px;\n  top: 18px;\n\n  background: ", ";\n"])), function (_a) {
     var progress = _a.progress, isCurrentValueMaxValue = _a.isCurrentValueMaxValue;
-    return (isCurrentValueMaxValue ? "calc(100% - 16px)" : "".concat(progress, "%"));
+    return (isCurrentValueMaxValue ? "calc(100% - 16px)" : progress + "%");
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.primary;
@@ -2338,8 +2338,8 @@ var FloatingPanIcon = styled(Icon$b)(templateObject_5$2 || (templateObject_5$2 =
 var Spinner = function (_a) {
     var _b = _a.size, size = _b === void 0 ? 128 : _b;
     return (React.createElement(Container, null,
-        React.createElement(RotatingPancakeIcon, { width: "".concat(size * 0.5, "px") }),
-        React.createElement(FloatingPanIcon, { width: "".concat(size, "px") })));
+        React.createElement(RotatingPancakeIcon, { width: size * 0.5 + "px" }),
+        React.createElement(FloatingPanIcon, { width: size + "px" })));
 };
 var templateObject_1$g, templateObject_2$c, templateObject_3$6, templateObject_4$4, templateObject_5$2;
 
@@ -2534,7 +2534,7 @@ var createReducer = function () { return function (state, action) {
             return __assign(__assign({}, state), { rows: getPaginatedData(state.originalRows, state.pagination.perPage, prevPage), pagination: __assign(__assign({}, state.pagination), { page: prevPage, canNext: prevPage * state.pagination.perPage < state.originalRows.length, canPrev: prevPage !== 1 }) });
         case "TOGGLE_SORT":
             if (!(action.columnName in state.columnsByName)) {
-                throw new Error("Invalid column, ".concat(action.columnName, " not found"));
+                throw new Error("Invalid column, " + action.columnName + " not found");
             }
             // loop through all columns and set the sort parameter to off unless
             // it's the specified column (only one column at a time for )
@@ -2644,7 +2644,7 @@ var sortDataInOrder = function (data, columns) {
         var newRow = {};
         columns.forEach(function (column) {
             if (!(column.name in row)) {
-                throw new Error("Invalid row data, ".concat(column.name, " not found"));
+                throw new Error("Invalid row data, " + column.name + " not found");
             }
             newRow[column.name] = row[column.name];
         });
@@ -2819,16 +2819,16 @@ var breakpointMap = {
     xll: 1200,
     xxl: 1400,
 };
-var breakpoints = Object.values(breakpointMap).map(function (breakpoint) { return "".concat(breakpoint, "px"); });
+var breakpoints = Object.values(breakpointMap).map(function (breakpoint) { return breakpoint + "px"; });
 var mediaQueries$1 = {
-    xs: "@media screen and (min-width: ".concat(breakpointMap.xs, "px)"),
-    sm: "@media screen and (min-width: ".concat(breakpointMap.sm, "px)"),
-    md: "@media screen and (min-width: ".concat(breakpointMap.md, "px)"),
-    lg: "@media screen and (min-width: ".concat(breakpointMap.lg, "px)"),
-    xl: "@media screen and (min-width: ".concat(breakpointMap.xl, "px)"),
-    xll: "@media screen and (min-width: ".concat(breakpointMap.xll, "px)"),
-    xxl: "@media screen and (min-width: ".concat(breakpointMap.xxl, "px)"),
-    nav: "@media screen and (min-width: ".concat(breakpointMap.lg, "px)"),
+    xs: "@media screen and (min-width: " + breakpointMap.xs + "px)",
+    sm: "@media screen and (min-width: " + breakpointMap.sm + "px)",
+    md: "@media screen and (min-width: " + breakpointMap.md + "px)",
+    lg: "@media screen and (min-width: " + breakpointMap.lg + "px)",
+    xl: "@media screen and (min-width: " + breakpointMap.xl + "px)",
+    xll: "@media screen and (min-width: " + breakpointMap.xll + "px)",
+    xxl: "@media screen and (min-width: " + breakpointMap.xxl + "px)",
+    nav: "@media screen and (min-width: " + breakpointMap.lg + "px)",
 };
 var shadows = {
     level1: "0px 2px 12px -8px rgba(25, 19, 38, 0.1), 0px 1px 1px rgba(25, 19, 38, 0.05)",
@@ -2871,16 +2871,16 @@ var mediaQueries = (function () {
         var _a, _b;
         // Largest size is just a min-width of second highest max-width
         if (index === Object.keys(breakpointMap).length - 1) {
-            return __assign(__assign({}, accum), (_a = {}, _a[size] = "(min-width: ".concat(prevMinWidth, "px)"), _a));
+            return __assign(__assign({}, accum), (_a = {}, _a[size] = "(min-width: " + prevMinWidth + "px)", _a));
         }
         var minWidth = prevMinWidth;
         var breakpoint = breakpointMap[size];
         // Min width for next iteration
         prevMinWidth = breakpoint + 1;
-        return __assign(__assign({}, accum), (_b = {}, _b[size] = "(min-width: ".concat(minWidth, "px) and (max-width: ").concat(breakpoint, "px)"), _b));
+        return __assign(__assign({}, accum), (_b = {}, _b[size] = "(min-width: " + minWidth + "px) and (max-width: " + breakpoint + "px)", _b));
     }, {});
 })();
-var getKey = function (size) { return "is".concat(size.charAt(0).toUpperCase()).concat(size.slice(1)); };
+var getKey = function (size) { return "is" + size.charAt(0).toUpperCase() + size.slice(1); };
 var useMatchBreakpoints = function () {
     var _a = useState(function () {
         return Object.keys(mediaQueries).reduce(function (accum, size) {
@@ -2938,21 +2938,21 @@ var createParticle = function (x, y, imgSrc, options) {
     var delay = Math.random() * 200;
     particle.style.backgroundRepeat = "no-repeat";
     particle.style.backgroundSize = "contain";
-    particle.style.backgroundImage = "url(".concat(imgSrc, ")");
+    particle.style.backgroundImage = "url(" + imgSrc + ")";
     particle.style.left = "0";
     particle.style.top = "0";
     particle.style.opacity = "0";
     particle.style.pointerEvents = "none";
     particle.style.position = "fixed";
-    particle.style.width = "".concat(width, "px");
-    particle.style.height = "".concat(height, "px");
+    particle.style.width = width + "px";
+    particle.style.height = height + "px";
     var animation = particle.animate([
         {
-            transform: "translate(-50%, -50%) translate(".concat(x, "px, ").concat(y, "px) rotate(0deg)"),
+            transform: "translate(-50%, -50%) translate(" + x + "px, " + y + "px) rotate(0deg)",
             opacity: 1,
         },
         {
-            transform: "translate(-50%, -50%) translate(".concat(x + destinationX, "px, ").concat(y + destinationY, "px) rotate(").concat(rotation, "deg)"),
+            transform: "translate(-50%, -50%) translate(" + (x + destinationX) + "px, " + (y + destinationY) + "px) rotate(" + rotation + "deg)",
             opacity: 0,
         },
     ], {
@@ -3468,12 +3468,12 @@ var StyledIcon = styled.img(templateObject_2$5 || (templateObject_2$5 = __makeTe
 var ToastAction = function (_a) {
     _a.title; var telegramDescription = _a.telegramDescription, tweeterDescription = _a.tweeterDescription, url = _a.url; _a.thx;
     return (React.createElement(ActionsContainer, null,
-        React.createElement(TwitterShareButton, { style: { width: '35%' }, title: tweeterDescription, url: "".concat(url) },
+        React.createElement(TwitterShareButton, { style: { width: '35%' }, title: tweeterDescription, url: "" + url },
             React.createElement(Button, { scale: "sm", width: '100%', style: { backgroundColor: '#16CDFD', alignItems: "center" } },
                 React.createElement(StyledIcon, { src: giftImg, alt: "gift-icon" }),
                 React.createElement(Text, { color: '#fff', fontSize: '12px', bold: true }, "Twitter"),
                 React.createElement(Icon$L, { mr: "8px", color: "#fff", width: "20px" }))),
-        React.createElement(TelegramShareButton, { style: { width: '35%', marginLeft: "10px", alignItems: "center" }, title: telegramDescription, url: "".concat(url) },
+        React.createElement(TelegramShareButton, { style: { width: '35%', marginLeft: "10px", alignItems: "center" }, title: telegramDescription, url: "" + url },
             React.createElement(Button, { scale: "sm", width: '100%', style: { backgroundColor: '#26A6E5', alignItems: "center" } },
                 React.createElement(Text, { color: '#fff', fontSize: '12px', bold: true }, "Telegram"),
                 React.createElement(Icon$M, { mr: "8px", color: "#fff", width: "20px" })))));
@@ -3496,7 +3496,7 @@ var alertTypeMap = (_a = {},
     _a);
 var ClearAllButton = styled(Button)(templateObject_1$6 || (templateObject_1$6 = __makeTemplateObject(["\n  position: absolute;\n  right: 0;\n  top: ", ";\n"], ["\n  position: absolute;\n  right: 0;\n  top: ", ";\n"])), function (_a) {
     var top = _a.top;
-    return "".concat(-top, "px");
+    return -top + "px";
 });
 var StyledToast = styled.div(templateObject_2$4 || (templateObject_2$4 = __makeTemplateObject(["\n  left: 50%;\n  transform: translate(-50%, 0);\n  position: fixed;\n  max-width: calc(100% - 12px);\n  transition: all 250ms ease-in;\n  width: 100%;\n\n  box-shadow: 0px -4px 11px rgba(0, 0, 0, 0.1), 0px 20px 36px -8px rgba(14, 14, 44, 0.32), 0px 1px 1px rgba(0, 0, 0, 0.16);\n  border-radius: 16px;\n\n  ", " {\n    transform: none;\n    left: auto;\n    right: 35px;\n    max-width: 350px;\n  }\n"], ["\n  left: 50%;\n  transform: translate(-50%, 0);\n  position: fixed;\n  max-width: calc(100% - 12px);\n  transition: all 250ms ease-in;\n  width: 100%;\n\n  box-shadow: 0px -4px 11px rgba(0, 0, 0, 0.1), 0px 20px 36px -8px rgba(14, 14, 44, 0.32), 0px 1px 1px rgba(0, 0, 0, 0.16);\n  border-radius: 16px;\n\n  ", " {\n    transform: none;\n    left: auto;\n    right: 35px;\n    max-width: 350px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
@@ -3529,18 +3529,18 @@ var Toast = function (_a) {
                 React.createElement(AlertWrapper, null,
                     hash &&
                         React.createElement(LinkWrapper, null,
-                            React.createElement(LinkStyles, { target: "_blank", href: "https://bscscan.com/tx/".concat(hash) }, "View on bscscan"),
+                            React.createElement(LinkStyles, { target: "_blank", href: "https://bscscan.com/tx/" + hash }, "View on bscscan"),
                             React.createElement(Icon$N, { ml: '7px', width: '18px', height: '18px', color: 'primary' })),
                     description ? React.createElement(Text, { color: "#6B7D98", fontSize: "12px", as: "p", mb: "8px", dangerouslySetInnerHTML: { __html: description } }) : React.createElement(React.Fragment, null),
                     telegramDescription && tweeterDescription && (React.createElement(ActionContainer, null,
-                        React.createElement(ToastAction, { telegramDescription: telegramDescription, tweeterDescription: tweeterDescription, title: title, url: url, thx: "https://bscscan.com/tx/".concat(hash) }),
+                        React.createElement(ToastAction, { telegramDescription: telegramDescription, tweeterDescription: tweeterDescription, title: title, url: url, thx: "https://bscscan.com/tx/" + hash }),
                         React.createElement(Button, { p: "0", scale: "sm", variant: 'text', as: 'a', href: 'https://docs.biswap.org/sharing-season', target: "_blank" },
                             React.createElement(SharingText, null,
                                 React.createElement(Text, { fontSize: '10px', pl: '0', fontWeight: '400', lineHeight: '12px', color: '#6b7d98' }, "*Check"),
                                 React.createElement(Text, { fontSize: '10px', pl: '0', fontWeight: '400', lineHeight: '12px', color: "#1263F1", ml: "2px" }, "Sharing Season"),
                                 React.createElement(Text, { fontSize: '10px', pl: '0', fontWeight: '400', lineHeight: '12px', color: '#6b7d98', ml: "2px" }, "details")))))),
                 React.createElement("div", { style: { width: '100%' } },
-                    React.createElement(ProgressWrapper, { style: { width: '100%' } }, progress ? React.createElement(ProgressLine, { style: { width: "".concat(100 - progress, "%") } }) : null))))));
+                    React.createElement(ProgressWrapper, { style: { width: '100%' } }, progress ? React.createElement(ProgressLine, { style: { width: 100 - progress + "%" } }) : null))))));
 };
 var templateObject_1$6, templateObject_2$4, templateObject_3$1, templateObject_4, templateObject_5, templateObject_6, templateObject_7, templateObject_8, templateObject_9;
 
@@ -3642,8 +3642,8 @@ var ToastContainer = function (_a) {
             var bottom = BOTTOM_POSITION + index * stackSpacing;
             var removeButtonPosition = stackSpacing * toasts.length + 40;
             if (index === 0)
-                return React.createElement(Toast, { handleRemove: handleRemove, handleMouseEnter: handleMouseEnter, handleMouseLeave: handleMouseLeave, progress: progress, key: toast.id, toast: toast, zIndex: zIndex, ttl: ttl, removeButtonPosition: removeButtonPosition, clearAll: toasts.length > 1 ? clearAllHandler : undefined, style: { bottom: "".concat(bottom, "px"), zIndex: zIndex } });
-            return (React.createElement(Toast, { key: toast.id, toast: toast, style: { bottom: "".concat(bottom, "px"), zIndex: zIndex } }));
+                return React.createElement(Toast, { handleRemove: handleRemove, handleMouseEnter: handleMouseEnter, handleMouseLeave: handleMouseLeave, progress: progress, key: toast.id, toast: toast, zIndex: zIndex, ttl: ttl, removeButtonPosition: removeButtonPosition, clearAll: toasts.length > 1 ? clearAllHandler : undefined, style: { bottom: bottom + "px", zIndex: zIndex } });
+            return (React.createElement(Toast, { key: toast.id, toast: toast, style: { bottom: bottom + "px", zIndex: zIndex } }));
         }))));
 };
 var templateObject_1$5;
@@ -3758,11 +3758,15 @@ var Icon$1 = function (props) {
 };
 
 var Icon = function (props) {
-    return (React.createElement(Svg, __assign({ viewBox: "0 0 32 32" }, props),
-        React.createElement("circle", { cx: "16", cy: "16", r: "16", fill: "white" }),
-        React.createElement("g", { transform: "translate(0,32) scale(0.1,-0.1)", stroke: "none" },
-            React.createElement("path", { fill: "#01003b", d: "M157 253 c-3 -15 -19 -46 -36 -67 -17 -21 -31 -45 -31 -53 0 -28 31 -72 51 -73 3 0 4 14 1 30 -3 21 3 42 22 70 29 44 31 64 12 99 l-13 23 -6 -29z" }),
-            React.createElement("path", { fill: "#3e89d0", d: "M198 158 c-22 -34 -30 -66 -21 -83 8 -13 12 -13 31 5 22 21 29 64 13 88 -6 10 -12 8 -23 -10z" }))));
+    return (React.createElement(Svg, { xmlns: "http://www.w3.org/2000/svg", width: "96", viewBox: "0 0 482 150", fill: "none" },
+        React.createElement("path", { "fill-rule": "evenodd", "clip-rule": "evenodd", d: "M96.6082 93.9043H53.4498C48.8956 93.9066 44.5286 95.7383 41.3083 98.9968C38.088 102.255 36.2778 106.674 36.2754 111.282V132.577C36.2778 137.185 38.088 141.604 41.3083 144.862C44.5286 148.121 48.8956 149.953 53.4498 149.955H84.862C84.8664 148.117 84.3651 146.314 83.4143 144.747C82.4635 143.181 81.1007 141.913 79.4783 141.086L83.9276 132.217C87.1746 133.88 89.9008 136.424 91.8021 139.564C93.7034 142.704 94.7049 146.317 94.695 150H96.5637C101.118 149.998 105.485 148.166 108.705 144.907C111.926 141.649 113.736 137.23 113.738 132.622V111.237C113.745 108.959 113.306 106.702 112.447 104.596C111.589 102.491 110.327 100.577 108.735 98.9664C107.143 97.3556 105.252 96.0791 103.171 95.2103C101.09 94.3416 98.8595 93.8977 96.6082 93.9043ZM54.1172 123.753C53.0596 123.753 52.0124 123.542 51.0354 123.133C50.0583 122.723 49.1705 122.123 48.4227 121.366C47.6749 120.61 47.0817 119.711 46.677 118.723C46.2722 117.734 46.0639 116.674 46.0639 115.604C46.0639 114.534 46.2722 113.474 46.677 112.486C47.0817 111.497 47.6749 110.599 48.4227 109.842C49.1705 109.086 50.0583 108.485 51.0354 108.076C52.0124 107.666 53.0596 107.455 54.1172 107.455C55.1748 107.455 56.222 107.666 57.1991 108.076C58.1761 108.485 59.0639 109.086 59.8117 109.842C60.5595 110.599 61.1527 111.497 61.5575 112.486C61.9622 113.474 62.1705 114.534 62.1705 115.604C62.1646 117.764 61.3117 119.833 59.7992 121.356C58.2866 122.88 56.2382 123.734 54.1039 123.73L54.1172 123.753ZM95.9408 123.753C94.8832 123.753 93.836 123.542 92.8589 123.133C91.8819 122.723 90.9941 122.123 90.2463 121.366C89.4985 120.61 88.9053 119.711 88.5005 118.723C88.0958 117.734 87.8875 116.674 87.8875 115.604C87.8875 114.534 88.0958 113.474 88.5005 112.486C88.9053 111.497 89.4985 110.599 90.2463 109.842C90.9941 109.086 91.8819 108.485 92.8589 108.076C93.836 107.666 94.8832 107.455 95.9408 107.455C96.9984 107.455 98.0456 107.666 99.0226 108.076C99.9997 108.485 100.887 109.086 101.635 109.842C102.383 110.599 102.976 111.497 103.381 112.486C103.786 113.474 103.994 114.534 103.994 115.604C103.988 117.764 103.135 119.833 101.623 121.356C100.11 122.88 98.0618 123.734 95.9274 123.73L95.9408 123.753Z", fill: "#1FB75C" }),
+        React.createElement("path", { d: "M150 97.7221C150 102.669 149.531 107.612 148.585 112.466C148.585 121.348 139.395 132.366 133.249 137.791C125.709 144.446 116.34 148.611 106.397 149.73C122.42 144.532 134.365 129.074 134.365 111.395C134.37 105.414 133.051 99.5075 130.503 94.1106C127.955 88.7137 124.244 83.9634 119.642 80.209C120.392 81.1913 120.798 82.3983 120.795 83.6396C120.798 85.0679 120.262 86.4434 119.295 87.4844C118.775 88.0527 118.145 88.5061 117.444 88.816C116.742 89.126 115.985 89.2857 115.22 89.2852C114.488 89.2858 113.763 89.1404 113.086 88.8574C112.41 88.5744 111.796 88.1593 111.278 87.6359C110.76 87.1124 110.349 86.4909 110.069 85.8067C109.789 85.1225 109.645 84.3892 109.645 83.6486C109.645 83.4865 109.645 83.32 109.667 83.1624L109.556 83.1309C109.365 79.8759 108.781 76.6569 107.816 73.546C107.558 72.7206 107.276 71.9102 106.971 71.1149C103.903 63.1108 98.3836 56.3108 91.22 51.711C84.8793 47.6325 77.519 45.4723 70.0057 45.4846C68.5907 45.4837 67.1767 45.5603 65.7699 45.7142C68.1444 46.9536 70.2461 48.6668 71.9483 50.7506C73.6505 52.8343 74.918 55.2454 75.6741 57.8383C75.7675 58.1534 75.8476 58.4686 75.9233 58.7882C77.8032 66.6673 74.6611 75.1329 68.1317 79.8065C60.2229 85.4675 48.9665 84.3466 42.3033 77.1546C40.3461 75.0421 38.8649 72.5253 37.9617 69.7777C36.0742 70.5881 34.248 71.5376 32.4979 72.6186C24.6618 77.4653 18.6202 84.7873 15.3058 93.4541C13.4637 98.2813 12.518 103.411 12.516 108.586C12.4994 127.92 26.0709 148.05 46.0016 149.924C35.1904 149.23 24.9094 144.938 16.7603 137.716C5.16179 127.437 0.000106119 112.974 0.000106119 97.7221C-0.0170561 87.44 2.04762 77.1387 6.08233 67.6978C12.5017 52.672 23.5314 40.1367 37.539 31.9469C35.767 33.0844 34.3078 34.6564 33.2966 36.517C32.2854 38.3775 31.7551 40.4664 31.7549 42.5898C31.754 44.4707 32.1692 46.3279 32.9698 48.0254C33.7705 49.7229 34.9364 51.2175 36.3822 52.3998C37.2468 53.1163 38.2051 53.7086 39.2297 54.1601C40.7725 54.847 42.4384 55.2056 44.124 55.2136H44.253C46.027 55.214 47.7807 54.8311 49.3967 54.0904C51.0127 53.3497 52.4537 52.2683 53.6233 50.9186C54.3176 50.1233 54.9082 49.2412 55.3808 48.2939C55.5276 48.2309 55.6744 48.1723 55.8257 48.1183C56.6613 46.6346 57.4043 45.0994 58.0503 43.5217C60.1803 38.3448 61.2723 32.7913 61.2628 27.1837C61.2628 25.8151 61.199 24.4644 61.0714 23.1318C60.2842 14.6669 56.9992 6.63712 51.6433 0.0857547C52.6578 0.0257272 53.6811 -0.002787 54.7134 0.000214377C64.111 -0.00657542 73.3509 2.44464 81.5364 7.116C89.7219 11.7874 96.5751 18.5203 101.431 26.6615C105.927 34.1631 108.579 42.6468 109.164 51.4003L109.36 51.4318C109.947 56.6277 114.425 60.67 119.593 60.6701C128.571 60.6973 133.195 49.2882 126.863 42.8734C134.19 49.9541 140.018 58.4667 143.995 67.895C147.972 77.3234 150.015 87.4709 150 97.7221Z", fill: "#1FB75C" }),
+        React.createElement("path", { d: "M199.45 61.3778C196.783 61.3778 194.801 60.8507 193.504 59.7967C192.279 58.7427 191.666 57.3123 191.666 55.5054C191.666 54.8278 191.738 54.0749 191.882 53.2468C192.026 52.4186 192.171 51.6657 192.315 50.9881C192.531 50.0094 192.855 49.0307 193.288 48.0519C193.72 47.0732 194.333 46.2074 195.126 45.4545C195.918 44.7017 196.927 44.0994 198.153 43.6477C199.378 43.1206 200.891 42.8571 202.693 42.8571C205.36 42.8571 207.306 43.3842 208.531 44.4382C209.828 45.4922 210.477 46.9226 210.477 48.7295C210.477 49.4071 210.405 50.16 210.261 50.9881C210.117 51.8163 209.972 52.5692 209.828 53.2468C209.612 54.2255 209.288 55.2042 208.855 56.183C208.423 57.1617 207.81 58.0275 207.017 58.7804C206.225 59.5332 205.216 60.1732 203.99 60.7002C202.765 61.1519 201.252 61.3778 199.45 61.3778ZM190.801 127.216C187.846 127.216 185.468 126.388 183.666 124.732C181.936 123.075 181.072 120.892 181.072 118.182C181.072 117.429 181.18 116.488 181.396 115.359L190.477 67.9277H205.612L196.639 114.568H203.017L200.639 127.216H190.801Z", fill: "#1A1A1A" }),
+        React.createElement("path", { d: "M250.828 62.8458L238.504 127.216H222.828L235.153 62.8458H215.261L218.072 48.3907H273.531L270.72 62.8458H250.828Z", fill: "#1A1A1A" }),
+        React.createElement("path", { d: "M283.683 128.571C276.692 128.571 271.179 126.426 267.142 122.134C263.106 117.768 261.088 111.669 261.088 103.84C261.088 98.4943 261.809 93.563 263.251 89.0457C264.764 84.4532 266.818 80.5007 269.413 77.188C272.007 73.8754 275.07 71.278 278.602 69.3958C282.206 67.5136 286.133 66.5726 290.386 66.5726C297.377 66.5726 302.89 68.7559 306.926 73.1225C310.962 77.4139 312.98 83.4745 312.98 91.3044C312.98 96.6497 312.224 101.619 310.71 106.211C309.269 110.728 307.251 114.643 304.656 117.956C302.061 121.269 298.962 123.866 295.359 125.748C291.755 127.63 287.863 128.571 283.683 128.571ZM284.224 115.81C290.133 115.81 293.917 111.481 295.575 102.823L297.629 92.2078C297.701 91.8314 297.773 91.342 297.845 90.7397C297.917 90.1374 297.953 89.4598 297.953 88.7069C297.953 85.846 297.269 83.5874 295.899 81.9311C294.53 80.1995 292.512 79.3337 289.845 79.3337C283.935 79.3337 280.151 83.6627 278.494 92.3207L276.44 102.936C276.368 103.313 276.296 103.802 276.224 104.404C276.151 105.007 276.115 105.684 276.115 106.437C276.115 109.298 276.8 111.594 278.17 113.326C279.539 114.982 281.557 115.81 284.224 115.81Z", fill: "#1A1A1A" }),
+        React.createElement("path", { d: "M331.466 43.6477H346.601L337.196 92.7724H337.952L345.736 82.6087L359.358 67.9277H376.979L353.952 91.9819L361.736 114.568H368.331L365.736 127.216H357.628C352.295 127.216 348.727 124.242 346.925 118.295L342.169 102.823L333.628 111.18L330.601 127.216H315.466L331.466 43.6477Z", fill: "#1A1A1A" }),
+        React.createElement("path", { d: "M396.569 128.571C388.497 128.571 382.479 126.313 378.515 121.796C374.551 117.203 372.569 110.954 372.569 103.049C372.569 98.306 373.29 93.7512 374.731 89.3845C376.173 84.9426 378.227 81.0653 380.893 77.7527C383.56 74.3648 386.803 71.6544 390.623 69.6217C394.443 67.5889 398.695 66.5726 403.38 66.5726C405.542 66.5726 407.812 66.8361 410.191 67.3631C412.569 67.8901 414.731 68.7935 416.677 70.0734C418.695 71.278 420.353 72.9343 421.65 75.0424C423.019 77.1504 423.704 79.8231 423.704 83.0604C423.704 86.1472 423.019 88.9328 421.65 91.4173C420.281 93.8265 418.155 95.9345 415.272 97.7414C412.389 99.473 408.677 100.866 404.137 101.92C399.596 102.899 394.155 103.501 387.812 103.727C387.668 104.404 387.596 104.931 387.596 105.308C387.596 105.684 387.596 106.023 387.596 106.324C387.596 109.185 388.317 111.481 389.758 113.213C391.272 114.944 393.902 115.81 397.65 115.81C400.101 115.81 402.371 115.283 404.461 114.229C406.623 113.1 408.965 110.879 411.488 107.566L420.785 115.246C417.254 120.139 413.542 123.602 409.65 125.635C405.83 127.593 401.47 128.571 396.569 128.571ZM402.515 78.6561C399.272 78.6561 396.497 79.7854 394.191 82.044C391.956 84.2274 390.515 87.2388 389.866 91.0785L389.434 93.6759C393.47 93.45 396.749 93.0736 399.272 92.5466C401.866 92.0196 403.884 91.3796 405.326 90.6268C406.767 89.7986 407.74 88.8952 408.245 87.9164C408.749 86.9377 409.001 85.846 409.001 84.6414C409.001 83.3616 408.785 82.3452 408.353 81.5923C407.92 80.7642 407.38 80.1619 406.731 79.7854C406.083 79.3337 405.362 79.0326 404.569 78.882C403.848 78.7314 403.164 78.6561 402.515 78.6561Z", fill: "#1A1A1A" }),
+        React.createElement("path", { d: "M423.99 127.216L435.342 67.9277H450.477L447.882 81.7053H448.531C450.693 76.9622 453.252 73.2731 456.207 70.6381C459.162 67.9277 462.873 66.5726 467.342 66.5726C471.738 66.5726 475.09 67.9277 477.396 70.6381C479.774 73.2731 480.963 77.0375 480.963 81.9311C480.963 83.3616 480.855 84.7544 480.639 86.1095C480.495 87.3894 480.279 88.7822 479.99 90.288L475.342 114.568H481.072L478.693 127.216H468.855C465.972 127.216 463.738 126.463 462.153 124.958C460.567 123.377 459.774 121.269 459.774 118.634C459.774 117.956 459.81 117.354 459.882 116.827C459.954 116.224 460.026 115.773 460.099 115.471L464.531 91.9819C464.747 90.9279 464.927 89.9115 465.072 88.9328C465.216 87.8788 465.288 86.7871 465.288 85.6578C465.288 83.9262 464.855 82.5334 463.99 81.4794C463.126 80.3501 461.648 79.7854 459.558 79.7854C457.684 79.7854 455.99 80.3124 454.477 81.3665C452.963 82.4205 451.594 83.7004 450.369 85.2061C449.072 86.7871 447.954 88.5564 447.017 90.5138C446.081 92.396 445.396 94.4664 444.963 96.725L439.126 127.216H423.99Z", fill: "#1A1A1A" })));
 };
 
 var ConnectorNames;
@@ -3828,7 +3832,7 @@ var connectors = [
         priority: 999,
     },
     {
-        title: "Huobi Wallet",
+        title: "iToken",
         icon: Icon,
         connectorId: ConnectorNames.Injected,
         priority: 999,
@@ -3850,7 +3854,7 @@ var WalletCard = function (_a) {
             localStorage.setItem(walletLocalStorageKey, walletConfig.title);
             window.localStorage.setItem(connectorLocalStorageKey, walletConfig.connectorId);
             onDismiss();
-        }, id: "wallet-connect-".concat(title.toLocaleLowerCase()) },
+        }, id: "wallet-connect-" + title.toLocaleLowerCase() },
         React.createElement(Icon, { width: "32px" }),
         React.createElement(StyledText, null, title)));
 };
@@ -3953,7 +3957,7 @@ var AccountModal = function (_a) {
             } }, account),
         React.createElement(Flex, { mb: "32px" },
             React.createElement(CopyToClipboard, { toCopy: account }, "Copy Address"),
-            React.createElement(LinkExternal, { ml: '26px', small: true, href: "https://bscscan.com/address/".concat(account), mr: "16px" }, "View on BscScan")),
+            React.createElement(LinkExternal, { ml: '26px', small: true, href: "https://bscscan.com/address/" + account, mr: "16px" }, "View on BscScan")),
         isSwap && (React.createElement(TransactionWrapper, null,
             React.createElement(Flex, { justifyContent: 'space-between', alignItems: 'center' },
                 React.createElement(Text, { fontSize: '14px', fontWeight: '600', lineHeight: '21px', color: '#07162D' }, "Recent transactions"),
