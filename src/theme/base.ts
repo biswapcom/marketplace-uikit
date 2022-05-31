@@ -42,7 +42,10 @@ const radii = {
 };
 
 const zIndices = {
-  dropdown: 10,
+  tooltip: 70,
+  stickyElement: 80,
+  dropdown: 85,
+  fixedElement: 90,
   modal: 100,
 };
 

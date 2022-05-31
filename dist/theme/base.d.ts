@@ -30,7 +30,10 @@ declare const _default: {
         circle: string;
     };
     zIndices: {
+        tooltip: number;
+        stickyElement: number;
         dropdown: number;
+        fixedElement: number;
         modal: number;
     };
 };

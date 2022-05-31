@@ -23,7 +23,7 @@ export const StyledTooltip = styled.div`
   line-height: 130%;
   border-radius: 8px;
   max-width: 320px;
-  z-index: 101;
+  z-index: ${({ theme }) => theme.zIndices.tooltip};
   background: ${({ theme }) => theme.tooltip.background};
   color: ${({ theme }) => theme.tooltip.text};
   box-shadow: ${({ theme }) => theme.tooltip.boxShadow};

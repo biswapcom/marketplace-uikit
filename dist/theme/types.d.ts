@@ -61,6 +61,9 @@ export declare type Colors = {
     polygon: string;
 };
 export declare type ZIndices = {
+    tooltip: number;
+    fixedElement: number;
+    stickyElement: number;
     dropdown: number;
     modal: number;
 };

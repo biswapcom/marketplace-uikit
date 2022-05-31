@@ -72,6 +72,9 @@ export type Colors = {
 };
 
 export type ZIndices = {
-  dropdown: number;
-  modal: number;
+  tooltip: number,
+  fixedElement: number,
+  stickyElement: number,
+  dropdown: number,
+  modal: number,
 };
