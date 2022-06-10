@@ -1,12 +1,12 @@
-import React from "react";
+import React, {useMemo} from "react";
 import styled from "styled-components";
 import { Link } from "../../components/Link";
 import { HelpIcon } from "../../components/Svg";
 import { Modal } from "../Modal";
 import WalletCard from "./WalletCard";
-import {connectors, connectorsMobile, walletLocalStorageKey} from "./config";
-import { Config, Login } from "./types";
-import isTouchDevice from "../../util/isTouchDevice";
+import config, { walletLocalStorageKey} from "./config";
+import {Config, ConnectorNames, Login} from "./types";
+import {useMatchBreakpoints} from "../../hooks";
 
 interface Props {
   login: Login;
@@ -51,8 +51,20 @@ const getPreferredConfig = (walletConfig: Config[]) => {
 };
 
 const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null }) => {
-
-  const sortedConfig = getPreferredConfig(isTouchDevice() ? connectorsMobile : connectors);
+  const { isMobile } = useMatchBreakpoints();
+  const sortedConfig = useMemo(
+    () =>
+      getPreferredConfig(
+        isMobile
+          ? config.map((item) =>
+            item.title === "TrustWallet"
+              ? { ...item, connectorId: ConnectorNames.Injected }
+              : item
+          )
+          : config
+      ),
+    [isMobile]
+  );
 
   return (
       <Modal title="Connect to a wallet" onDismiss={onDismiss}>
