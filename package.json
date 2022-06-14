@@ -73,6 +73,8 @@
     "styled-components": "^5.2.0"
   },
   "dependencies": {
+    "@popperjs/core": "^2.9.2",
+    "react-popper": "^2.2.5",
     "@types/lodash": "^4.14.162",
     "@types/react-scroll": "^1.8.2",
     "@types/styled-system": "^5.1.10",
