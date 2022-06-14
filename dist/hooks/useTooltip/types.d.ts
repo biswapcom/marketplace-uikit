@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import { Placement, Padding } from "@popperjs/core";
 export interface TooltipRefs {
     targetRef: React.Dispatch<React.SetStateAction<HTMLElement | null>>;
