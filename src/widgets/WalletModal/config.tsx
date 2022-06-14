@@ -79,6 +79,12 @@ const connectors: Config[] = [
     connectorId: ConnectorNames.Injected,
     priority: 999,
   },
+  {
+    title: "BitKeep Wallet",
+    icon: BitKeepWallet,
+    connectorId: ConnectorNames.Injected,
+    priority: 999,
+  },
 ];
 
 export default connectors
